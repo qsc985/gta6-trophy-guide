@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: checklist, roadmap, missables and a cited guide for each trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">LL</div>
+    <div>
+      <h1>Leonida Ledger</h1>
+      <p class="subtitle">GTA 6 Trophy Guide &amp; Tracker — PlayStation 5 · 55 trophies · works offline</p>
+    </div>
+  </div>
+  <div class="progress-wrap" aria-label="Overall progress">
+    <div class="progress-numbers"><strong id="earnedCount">0</strong><span> / 55 earned</span><span id="percentLabel">0%</span></div>
+    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+    <div class="progress-grades" id="gradeCounts"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button class="tab active" data-view="list" type="button">Checklist</button>
+  <button class="tab" data-view="roadmap" type="button">Platinum Roadmap</button>
+  <button class="tab" data-view="missable" type="button">Missables <span class="tab-badge" id="missableBadge">1</span></button>
+</nav>
+
+<main>
+  <section id="view-list" class="view">
+    <div class="toolbar">
+      <label class="search-box">Search <input id="searchInput" type="search" placeholder="Trophy name, mission or keyword…" autocomplete="off"></label>
+      <fieldset class="filter-group" id="gradeFilters">
+        <legend>Grade</legend>
+        <button type="button" data-grade="all" class="chip active">All</button>
+        <button type="button" data-grade="platinum" class="chip">Platinum</button>
+        <button type="button" data-grade="gold" class="chip">Gold</button>
+        <button type="button" data-grade="silver" class="chip">Silver</button>
+        <button type="button" data-grade="bronze" class="chip">Bronze</button>
+      </fieldset>
+      <fieldset class="filter-group" id="kindFilters">
+        <legend>Type</legend>
+        <button type="button" data-kind="all" class="chip active">All</button>
+        <button type="button" data-kind="story" class="chip">Story</button>
+        <button type="button" data-kind="missable" class="chip">Missable</button>
+        <button type="button" data-kind="collectibles" class="chip">Collectibles</button>
+        <button type="button" data-kind="activities" class="chip">Activities</button>
+        <button type="button" data-kind="online" class="chip">Online</button>
+        <button type="button" data-kind="other" class="chip">Other</button>
+      </fieldset>
+      <div class="toggles">
+        <label class="toggle"><input id="unearnedOnly" type="checkbox"> Unearned only</label>
+        <label class="toggle spoiler-toggle"><input id="spoilerToggle" type="checkbox"> Spoiler mode <span class="hint">hides story names until earned</span></label>
+      </div>
+      <div class="io-buttons">
+        <button id="exportBtn" type="button">Export progress</button>
+        <button id="importBtn" type="button">Import progress</button>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
+        <button id="resetBtn" type="button" class="danger">Reset</button>
+      </div>
+    </div>
+    <p class="result-line" id="resultLine"></p>
+    <p class="empty-note" id="emptyNote" hidden>No trophies match these filters. Try clearing the search or a filter.</p>
+    <ul class="trophy-list" id="trophyList"></ul>
+    <p class="fineprint">Names, descriptions and grades are the official PlayStation list as published by Exophase and PSNProfiles. Guides are written in our own words and cite their sources beside each trophy. No online trophies exist in this list — the Online filter is here because the list was checked for them.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Platinum Roadmap</h2>
+    <p class="lede">One playthrough, about 200 hours, difficulty 4/10 (PowerPyx). No online trophies, no difficulty trophies, no mission medals. Work the stages in order; almost everything can be done after the credits, except the one missable in Stage 1.</p>
+    <ol class="roadmap" id="roadmapList"></ol>
+    <p class="fineprint">Roadmap built from the official trophy descriptions. Time estimate and difficulty: PowerPyx — GTA 6 Trophy Guide &amp; Roadmap.</p>
+  </section>
+
+  <section id="view-missable" class="view" hidden>
+    <h2>Missable Trophies — Watch List</h2>
+    <p class="lede">Only one trophy is reported as possibly missable. Everything else can be earned after the story in free roam. Because the game has no mission replay, keep a manual save at the start of every chapter and one before the final mission.</p>
+    <ul class="trophy-list" id="missableList"></ul>
+    <div class="safe-box">
+      <h3>Why the rest are safe</h3>
+      <p>PowerPyx and GTABase both flag a single trophy — <strong>Positive Mental Attitude</strong> — as potentially missable, and only because of one meditation at Jason's house in Chapter 1. The story trophies unlock from mandatory missions, the activities and collectibles stay open after the credits, and the 100% checklist has nothing missable on it. Do the Chapter 1 meditation, keep chapter-start saves, and the platinum cannot be locked out.</p>
+      <p class="fineprint">Sources: PowerPyx — GTA 6 Trophy Guide &amp; Roadmap; GTABase — GTA 6 trophy guide; Beebom — GTA 6 Meditation Spots Locations.</p>
+    </div>
+  </section>
+</main>
+
+<aside class="detail" id="detailPanel" hidden aria-label="Trophy detail">
+  <button class="detail-close" id="detailClose" type="button" aria-label="Close detail">×</button>
+  <div id="detailBody"></div>
+</aside>
+
+<footer>
+  <p>Leonida Ledger — an unofficial, open-source fan guide. Not affiliated with Rockstar Games. No logos, artwork or screenshots from the game are used here. Data: the official 55-trophy list (Exophase, PSNProfiles). Guides: our own words, sources named beside each guide.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
